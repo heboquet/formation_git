@@ -10,7 +10,8 @@ L’utilisation de git nécessite d’associer **chaque machine** utilisée (à 
 
   ```text
   cd ~/.ssh
-  ssh-keygen -t ed25519 -C <your_email@example.com>```
+  ssh-keygen -t ed25519 -C <your_email@example.com>
+  ```
 
   - Accepter l’emplacement par défaut de la clef, en appuyant sur **Entrée.** Astuce : possibilité de créer une clé ssh avec nom personnalisé pour en posséder plusieurs. Tapez l’emplacement du fichier par défaut et remplacez *id\_ssh\_keyname* par le nom personnalisé de votre clé
   - Choisissez un mot de passe. Non obligatoire mais **très recommandé**. Vous sera demandé à chaque *push/clone*
