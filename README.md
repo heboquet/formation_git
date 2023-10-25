@@ -95,7 +95,8 @@ git branch lenomdemabranche
 Pour visualiser toutes les branches et savoir sur quelle branche vous êtes (marqué par un astérisque), lancez simplement :
 
 ```text
-git branch```
+git branch
+```
 
 ![d0ce20672e75214bf7560c545b722d9f.png](./img/d0ce20672e75214bf7560c545b722d9f.png)
 
@@ -150,13 +151,15 @@ git add cefichier etpuisceluila etunautre
 La vérification de cette commande peut être effectuée avec la commande. Un résumé des fichiers modifiés préparés pour la prochaine validation sera listé :
 
 ```text
-git status```
+git status
+```
 
 Astuce : pour ne pas ajouter de fichiers spécifiques, vous pouvez utiliser le fichier gitignore et lister des fichiers et/ou des dossiers qui ne seront pas ajouté au futur commit.
 La commande de suppression d’un fichier ou d’un dossier dans git est aussi souvent utilisée. Elle permet de ne plus suivre ce fichier et/ou dossier dans le git.
 
 ```text
-git rm cefichier```
+git rm cefichier
+```
 
 ### Les commits
 
@@ -168,17 +171,21 @@ git commit -m "first commit"
 ```
 
 L’option -m permet de laisser le message de description du commit, sinon une fenêtre Nano (ou votre éditeur préféré) s’ouvre pour que vous puissiez écrire votre description. Il est plus utile de donner une vraie description de vos changements dans le projet plutôt qu’un « update ».
-Il est conseillé de ne faire que 4 commits maximum par jour, afin d’éviter le surplus de commit inutile (une faute d’orthographe peut être ajouté au prochain commit plus complet, par exemple). Aussi, si le message de description du commit a mal été renseigné, une option de la commande permettant de gérer ces petites erreurs crée un commit qui remplace l’ancien. N’oubliez pas de 
-```text
-git add votrefichierunpetitpeumodifie``` pour l’ajouter au nouveau commit qui remplacera l’ancien.
+Il est conseillé de ne faire que 4 commits maximum par jour, afin d’éviter le surplus de commit inutile (une faute d’orthographe peut être ajouté au prochain commit plus complet, par exemple). Aussi, si le message de description du commit a mal été renseigné, une option de la commande permettant de gérer ces petites erreurs crée un commit qui remplace l’ancien. N’oubliez pas de faire cette commande pour l’ajouter au nouveau commit qui remplacera l’ancien.
 
 ```text
-git commit --amend```
+git add votrefichierunpetitpeumodifie
+``` 
+
+```text
+git commit --amend
+```
 
 Une nouvelle fenêtre sur votre éditeur préféré s’ouvre et le message de l’ancien commit s’affiche et peut être modifié. Vous pouvez vérifier que votre message de commit en faisant la commande :
 
 ```text
-git log```
+git log
+```
 
 Tous les commits sont listés avec leur message, l’auteur, la date et la branche.
 
@@ -190,6 +197,7 @@ git push --force-with-lease origin nombranche
 ```
 
 S’il n’est pas nécessaire de changer le message de commit, la commande suivante permet seulement de modifier le fichier.
+
 ```text
 git commit --amend --no-edit
 ```
@@ -217,14 +225,16 @@ Dans votre espace de travail, il faudra donc effectuer ces deux commandes :
 
 ```text
 git fetch origin nombranche
-git merge origin nombranche```
+git merge origin nombranche
+```
 
 Pour information, ces deux commandes sont l’équivalent de `git pull`. Elle vient effectuer ces deux dernières actions à la suite.
 Si vous êtes sur un dépôt contenant plusieurs personnes susceptibles de travailler sur le même projet en même temps, il est préférable d’utiliser le fetch alors que si vous êtes seul sur un dépôt, le pull est plus conseillé.
 Une fois toutes les modifications récupérées, le travail effectué peut alors être envoyer du dépôt local vers le dépôt central. Il peut être fait dans n’importe quel dossier de travail du git et un ou plusieurs commit doivent être précédemment fait. Il est fortement conseillé d’effectuer cette commande seulement **une fois par jour** et d’informer les collègues travaillant sur le même projet (afin qu’ils puissent récupérer vos modifications).
 
 ```text
-git push origin nombranche```
+git push origin nombranche
+```
 
 Le nom de la branche doit toujours être spécifiée pour ne pas faire d’erreur.
 
