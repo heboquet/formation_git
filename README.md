@@ -60,8 +60,14 @@ git remote add origin <git@github.com:heboquet/test.git>
 git push -u origin main
 ```
 
-La commande `git init` va ajouter le dossier caché _.git_ et donc ajouter les fonctionnalités de git dans le dossier et la commande `git branch -M main` crée une nouvelle branche pour que le premier commit soit affectée à cette branche. Aucune branche n’existe si elle n’est pas créée et une erreur apparaîtra lors du push. La commande `git remote add origin <git@github.com:heboquet/test.git>` permet d’ajouter le contenu du dossier à un repo distant (ici Github). L’adresse du repo est son adresse ssh.
+La commande `git init` va ajouter le dossier caché _.git_ et donc ajouter les fonctionnalités de git dans le dossier et la commande `git branch -M main` crée une nouvelle branche pour que le premier commit soit affectée à cette branche. Aucune branche n’existe si elle n’est pas créée et une erreur apparaîtra lors du push. La commande `git remote add origin <git@github.com:heboquet/test.git>` permet d’ajouter le contenu du dossier à un repo distant (ici Github). L’adresse du repo est son adresse ssh ou http(s).s
 ![ca2049cd2429c5d7844c6d66ac353ba3.png](./img/ca2049cd2429c5d7844c6d66ac353ba3.png)
+
+Pour modifier un URL remote, utilisez la même commande rendera une erreur comme quoi le remote existe déjà. Il faudra donc lancer cette commande : 
+
+```text
+git remote set-url origin <REMOTE_URL>
+```
 
 ### Cloner un dépôt déjà existant
 
@@ -271,6 +277,11 @@ La branche main est bien désignée comme protégée et les changements peuvent 
 Le sujet du pull request se ferme automatiquement et la branche main est bien à jour.
 
 **Les commandes astuces**
+
+**Git reset** : Supprimer le dernier commit local fait par erreur (oublie de se rediriger vers dev par exemple...). Les modifications ne seront pas supprimées. 
+```text
+git reset HEAD~
+```
 
 **Git blame** : Montre le numéro du commit d’un fichier spécifié, des modifications, l’auteur et la date de ces dernières. Exemple :
 
